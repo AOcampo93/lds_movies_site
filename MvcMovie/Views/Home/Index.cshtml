@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container-carousel">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="case-overflow">
+                    <img src="/css/backgrounds/meet-the-mormons.png" alt="...">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="case-overflow">
+                    <img src="/css/backgrounds/Ephraims-rescue.png" alt="...">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="case-overflow">
+                    <img src="/css/backgrounds/once-i-was-a-beehive.png" alt="...">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="case-overflow">
+                    <img src="/css/backgrounds/the-other-side-of-heaven.png" alt="...">
+                </div>
+            </div>
+        </div>
+        <!--<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>-->
+    </div>
+</div>
+<div class="full-cont">
+    <div class="cont-body">
+        <div id="home">
+            <nav>
+                <div class="logo-header">
+                    <img src="/css/logo/logo.png"/>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a asp-controller="Movies" asp-action="Index">Movies</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#aboutUs">About Us</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#Privacy">Privacy</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <img class="logo-home" src="/images/logo.png" />
+            <p>We have the best library of LDS movies, where you can know all details that you need to watch them.</p>
+            <input type="button" value="Explore our Library" class="btn-standar" onclick="location.href='@Url.Action("Index", "Movies")'">
+        </div>
+    </div>
+</div>

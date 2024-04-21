@@ -1,0 +1,121 @@
+﻿@model MvcMovie.Models.Movie
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="container-carousel">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="case-overflow">
+                    <img src="/css/backgrounds/meet-the-mormons.png" alt="...">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="case-overflow">
+                    <img src="/css/backgrounds/Ephraims-rescue.png" alt="...">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="case-overflow">
+                    <img src="/css/backgrounds/once-i-was-a-beehive.png" alt="...">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="case-overflow">
+                    <img src="/css/backgrounds/the-other-side-of-heaven.png" alt="...">
+                </div>
+            </div>
+        </div>
+        <!--<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>-->
+    </div>
+</div>
+<div class="full-cont-movie">
+    <div class="cont-body">
+        <div class="movies">
+            <nav>
+                <div class="logo-header">
+                    <img src="/css/logo/logo.png" />
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#aboutUs">About Us</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#Privacy">Privacy</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+
+            <div class="Title">
+                <h1>Delete</h1>
+                <p><a asp-action="Index">Back to List</a></p>
+            </div>
+            <div class="cont-details">
+                <div class="image">
+                    <img src="@Html.DisplayFor(model => model.Image)" />
+                </div>
+                <div class="details">
+                    <div>
+                        <h3 class="text-delete">Are you sure you want to delete this?</h3>
+                        <dl class="row">
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Title)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Title)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.ReleaseDate)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.ReleaseDate)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Genre)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Genre)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Price)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Price)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Rating)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Rating)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Image)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Image)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Description)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Description)
+                            </dd>
+                        </dl>
+                        <form asp-action="Delete">
+                            <input type="hidden" asp-for="Id" />
+                            <input type="submit" value="Delete" class="btn-standar" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

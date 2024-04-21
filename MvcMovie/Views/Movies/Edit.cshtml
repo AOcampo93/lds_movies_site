@@ -1,0 +1,122 @@
+﻿@model MvcMovie.Models.Movie
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+
+<div class="container-carousel">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="case-overflow">
+                    <img src="/css/backgrounds/meet-the-mormons.png" alt="...">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="case-overflow">
+                    <img src="/css/backgrounds/Ephraims-rescue.png" alt="...">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="case-overflow">
+                    <img src="/css/backgrounds/once-i-was-a-beehive.png" alt="...">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="case-overflow">
+                    <img src="/css/backgrounds/the-other-side-of-heaven.png" alt="...">
+                </div>
+            </div>
+        </div>
+        <!--<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>-->
+    </div>
+</div>
+<div class="full-cont-movie">
+    <div class="cont-body">
+        <div class="movies">
+            <nav>
+                <div class="logo-header">
+                    <img src="/css/logo/logo.png" />
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#aboutUs">About Us</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#Privacy">Privacy</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+
+            <div class="Title">
+                <h1>Edit</h1>
+                <p><a asp-action="Index">Back to List</a></p>
+            </div>
+            <div class="cont-details">
+                <div class="image">
+                    <img src="@Html.DisplayFor(model => model.Image)" />
+                </div>
+                <div class="details">
+                    <div class="overflow-form">
+                        <form asp-action="Edit">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" />
+                            <div class="form-group">
+                                <label asp-for="Title" class="control-label"></label>
+                                <input asp-for="Title" class="form-control" />
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ReleaseDate" class="control-label"></label>
+                                <input asp-for="ReleaseDate" class="form-control" />
+                                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Genre" class="control-label"></label>
+                                <input asp-for="Genre" class="form-control" />
+                                <span asp-validation-for="Genre" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Price" class="control-label"></label>
+                                <input asp-for="Price" class="form-control" />
+                                <span asp-validation-for="Price" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Rating" class="control-label"></label>
+                                <input asp-for="Rating" class="form-control" />
+                                <span asp-validation-for="Rating" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Image" class="control-label"></label>
+                                <input asp-for="Image" class="form-control" />
+                                <span asp-validation-for="Image" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Description" class="control-label"></label>
+                                <input asp-for="Description" class="form-control" />
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Save" class="btn-standar space-top" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
